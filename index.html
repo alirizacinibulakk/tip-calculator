@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <title>TİP CALCULATOR</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/js/tipCalculator.js" defer></script>
+</head>
+<body>
+    <div class="calculator">
+        <h1>SPLITTER</h1>
+      
+        <div class="input-section">
+          <div class="input-group">
+            <label for="bill">Bill</label>
+            <input type="number" id="bill" placeholder="$" />
+          </div>
+      
+          <div class="tip-section">
+            <label>Select Tip %</label>
+            <div class="tip-buttons">
+              <button>5%</button>
+              <button>10%</button>
+              <button class="active">15%</button>
+              <button>25%</button>
+              <button>50%</button>
+              <input type="number" id="custom-tip" placeholder="Custom" />
+            </div>
+          </div>
+      
+          <div class="people-input">
+            <label for="people">Number of People</label>
+            <input type="number" id="people" value="1" />
+          </div>
+        </div>
+      
+        <div class="results">
+          <div class="result-item">
+            <h3>Tip Amount</h3>
+            <p id="tip-amount">$4.27</p>
+          </div>
+      
+          <div class="result-item">
+            <h3>Total</h3>
+            <p id="total">$32.79</p>
+          </div>
+      
+          <button id="reset">RESET</button>
+        </div>
+    </div>      
+</body>
+</html>

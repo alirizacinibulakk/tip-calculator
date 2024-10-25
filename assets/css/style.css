@@ -1,0 +1,224 @@
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+    line-height: 1;
+    background-color: #f0f8ff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 1rem;
+    font-family: "Space Mono", monospace;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.calculator {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 350px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+h1 {
+    font-size: 2rem;
+    color: #00494d;
+    margin-bottom: 1.5rem;
+}
+
+.input-group, .tip-section {
+    margin-bottom: 1.5rem;
+}
+
+label {
+    display: block;
+    font-size: 1.2rem;
+    color: #7f9c9d;
+    margin-bottom: 0.5rem;
+}
+
+input[type="number"] {
+    width: 100%;
+    padding: 0.75rem;
+    font-size: 1.2rem;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+.tip-buttons {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+button {
+    padding: 1rem;
+    font-size: 1.2rem;
+    border-radius: 10px;
+    border: none;
+    background-color: #00494d;
+    color: #fff;
+    flex: 1;
+    margin: 0.25rem;
+    cursor: pointer;
+}
+
+button.active {
+    background-color: #26c2ad;
+}
+
+button:focus {
+    outline: none;
+}
+
+input#custom-tip {
+    width: 30%;
+    text-align: center;
+    font-size: 1.2rem;
+    padding: 0.75rem;
+}
+
+.results {
+    margin: 2rem 0;
+}
+
+.result-item {
+    margin-bottom: 1rem;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: #7f9c9d;
+}
+
+p {
+    font-size: 2rem;
+    color: #00494d;
+}
+
+button#reset {
+    padding: 1rem;
+    width: 100%;
+    background-color: #26c2ad;
+    color: white;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+button#reset:hover {
+    background-color: #00494d;
+}
+
+/* --- Desktop için responsive düzen --- */
+
+@media screen and (min-width: 768px) {
+    body {
+        padding: 2rem;
+    }
+
+    .calculator {
+        max-width: 900px; /* Genişliği büyütüyoruz */
+        padding: 3rem;
+        display: grid;
+        grid-template-columns: 1fr 1fr; /* İki sütunlu yapı oluşturuyoruz */
+        gap: 2rem; /* İki sütun arasında boşluk bırakıyoruz */
+    }
+
+    .input-section {
+        text-align: left;
+    }
+
+    h1 {
+        font-size: 2.5rem; /* Başlık boyutunu büyütüyoruz */
+        grid-column: span 2;
+        text-align: center;
+    }
+
+    .input-group, .tip-section, .people-input {
+        width: 100%;
+    }
+
+    input[type="number"], input#custom-tip {
+        font-size: 1.5rem; /* Inputların boyutlarını artırıyoruz */
+        padding: 1rem;
+    }
+
+    button {
+        padding: 1.2rem;
+        font-size: 1.4rem; /* Buton boyutlarını büyütüyoruz */
+        margin: 0.5rem;
+    }
+
+    .results {
+        display: block; /* Sonuçları dikey olarak hizalayacağız */
+        padding: 1rem;
+        background-color: #00494d;
+        border-radius: 10px;
+        color: white;
+        text-align: left;
+    }
+
+    .result-item h3 {
+        font-size: 1.4rem;
+        color: #7f9c9d;
+    }
+
+    .result-item p {
+        font-size: 2.5rem; /* Sonuç yazılarını büyütüyoruz */
+    }
+
+    button#reset {
+        width: 100%;
+        font-size: 1.5rem;
+        background-color: #26c2ad;
+    }
+}
