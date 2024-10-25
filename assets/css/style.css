@@ -25,12 +25,12 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
     line-height: 1;
-    background-color: #f0f8ff;
+    background-color: #C5E4E7;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     height: 100vh;
-    padding: 1rem;
     font-family: "Space Mono", monospace;
 }
 ol, ul {
@@ -57,29 +57,51 @@ table {
 
 .calculator {
     background-color: #fff;
-    padding: 2rem;
+    padding: 32px;
     border-radius: 15px;
     width: 100%;
     max-width: 350px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: all 0.3s ease;
+    margin-top: 144px;
 }
 
-h1 {
-    font-size: 2rem;
-    color: #00494d;
-    margin-bottom: 1.5rem;
+.header{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-block: 50px;
 }
 
 .input-group, .tip-section {
-    margin-bottom: 1.5rem;
+    margin-bottom: 32px;
+}
+.input-group label{
+    text-align: left;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 23.7px;
+    text-align: left;
+    margin-bottom: 6px;
+    color: #5E7A7D;
+}
+.input-group input{
+    background-color: #F3F9FA;
+    text-align: right;
+    color: #00474B;
+}
+.input-dollar-icon{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAARCAYAAAAL4VbbAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAFuSURBVHgBbZJRTsJAEIZndou8cgN7BLwBFavhiXgCrPjCk3IC4Aa8mWCgcANeDElrU24AnkC8Aa8Ku+PsNhAsnaTJ7M7fne+fXYBcvC4WrvmgIER+o+yUwrJz8VUkxkMyiqKqRNlEggfedQl093e/n3cajc0/8ThJeqihX3QaAfTbfn1gMULms0LEDYL2uLy2IoIg24P+2yKuZczywiak1Czw/SWnW7Nu39anilRgRVK0MvERSFzmERzHWYOmGZD+tpIwTSukaMV9XYtAWDEGtab7nd6tzwzyDy7tlOFunRkkmIqS6Aaet8V8cRJ/rPiMKk+hi4jPWUdcPvrXnuBiOokTOrm1zKBfH6LEq2xNNYMreJAW3gHHzXcxrQ+jtNNQSFOTSCnC0XtUPRWby2KEmpn3kXkcJ31OermDDQ5PBrda6eDp7mZ+NBhGKZtSL1xsWhHBJyMsf0py2PG8DRTFwXBR7eyJKpADNO+iIP4AYJOfeozotoUAAAAASUVORK5CYII=');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 20px;
 }
 
 label {
     display: block;
     font-size: 1.2rem;
-    color: #7f9c9d;
+    color: #5E7A7D;
     margin-bottom: 0.5rem;
 }
 
@@ -88,34 +110,34 @@ input[type="number"] {
     padding: 0.75rem;
     font-size: 1.2rem;
     border: 1px solid #ccc;
-    border-radius: 10px;
+    border-radius: 5px;
     margin-bottom: 1rem;
 }
 
 .tip-buttons {
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
 }
-
-button {
+.tip-btn {
     padding: 1rem;
     font-size: 1.2rem;
-    border-radius: 10px;
-    border: none;
     background-color: #00494d;
-    color: #fff;
-    flex: 1;
-    margin: 0.25rem;
+    color: white;
+    border-radius: 10px;
     cursor: pointer;
+    border: none;
+    display: inline-block;
+    text-align: center;
+    transition: background-color 0.3s ease;
 }
-
-button.active {
+input[type="radio"] {
+    display: none;
+}
+  
+input[type="radio"]:checked + label {
     background-color: #26c2ad;
-}
-
-button:focus {
-    outline: none;
+    color: white;
 }
 
 input#custom-tip {
@@ -123,6 +145,26 @@ input#custom-tip {
     text-align: center;
     font-size: 1.2rem;
     padding: 0.75rem;
+}
+
+.people-input label{
+    text-align: left;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 23.7px;
+    text-align: left;
+    margin-bottom: 6px;
+    color: #5E7A7D;
+}
+
+.people-input input{
+    text-align: right;
+}
+.input-user-icon{
+    background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAA0AAAAQCAYAAADNo/U5AAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAEaSURBVHgBlZFBTsMwEEVnxm7pkhuQI3AEIsQiu9yARKzYwQlSTsCSTaP0BrCLWhoFTkBvQI5QIYGEHNs4Rq3SpKmSv/HYM29mPIPQ0Gyx8IlYBIDnoKHQCPObq8uHegzWL/FyGSCypJlIA0zrIO1nqCq0ZTJPkzw/bUFJmjvG60CHlBD+wUrHRBKLFhR6rnnEt4MEGmDC1y3I+jiGNqDZmlT3oetudnFb4ylNHQ7c4RNeaCHv7MhBr8sRm8OPAElyc+t5xa5SnGXRCR9/Mk65EiqSUr/g95dfnbyUj3zMPip//JrZ6eJstfJJ4zP0lCyVSyQhgAEiRtdkGjwbApkhXND/hwdRTu/l1kWdC+2ShneyCzVGX+B3RMEfTPdeYE+cFhMAAAAASUVORK5CYII=');
+    background-repeat: no-repeat;
+    background-position: 10px center;
+    padding-left: 20px;
 }
 
 .results {
@@ -133,12 +175,12 @@ input#custom-tip {
     margin-bottom: 1rem;
 }
 
-h3 {
+.result-item h3 {
     font-size: 1.2rem;
     color: #7f9c9d;
 }
 
-p {
+.result-item p {
     font-size: 2rem;
     color: #00494d;
 }
@@ -158,19 +200,17 @@ button#reset:hover {
     background-color: #00494d;
 }
 
-/* --- Desktop için responsive düzen --- */
-
 @media screen and (min-width: 768px) {
     body {
-        padding: 2rem;
+        padding: 32px;
     }
 
     .calculator {
-        max-width: 900px; /* Genişliği büyütüyoruz */
+        max-width: 900px; 
         padding: 3rem;
         display: grid;
-        grid-template-columns: 1fr 1fr; /* İki sütunlu yapı oluşturuyoruz */
-        gap: 2rem; /* İki sütun arasında boşluk bırakıyoruz */
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem; 
     }
 
     .input-section {
@@ -178,7 +218,7 @@ button#reset:hover {
     }
 
     h1 {
-        font-size: 2.5rem; /* Başlık boyutunu büyütüyoruz */
+        font-size: 2.5rem; 
         grid-column: span 2;
         text-align: center;
     }
@@ -188,18 +228,18 @@ button#reset:hover {
     }
 
     input[type="number"], input#custom-tip {
-        font-size: 1.5rem; /* Inputların boyutlarını artırıyoruz */
+        font-size: 1.5rem; 
         padding: 1rem;
     }
 
     button {
         padding: 1.2rem;
-        font-size: 1.4rem; /* Buton boyutlarını büyütüyoruz */
+        font-size: 1.4rem; 
         margin: 0.5rem;
     }
 
     .results {
-        display: block; /* Sonuçları dikey olarak hizalayacağız */
+        display: block; 
         padding: 1rem;
         background-color: #00494d;
         border-radius: 10px;
@@ -213,7 +253,7 @@ button#reset:hover {
     }
 
     .result-item p {
-        font-size: 2.5rem; /* Sonuç yazılarını büyütüyoruz */
+        font-size: 2.5rem;
     }
 
     button#reset {
